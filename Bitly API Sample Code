@@ -1,0 +1,45 @@
+Bitly API: https://dev.bitly.com/links.html
+
+import requests
+import json
+
+Bitly API Statement
+
+query_params = {'access_token': 'API_KEY',
+                'link': 'http://bitly.com/RYYpZT'} 
+
+endpoint = 'https://api-ssl.bitly.com/v3/link/clicks'
+response = requests.get(endpoint, params=query_params, verify=False)
+
+data = json.loads(response.content)
+print (data)
+
+-------------------
+import requests
+import json
+
+query_params = {'access_token': myapi_token,
+                'link': 'http://bitly.com/RYYpZT',
+                'unit':'minute',
+                'units':15} 
+
+endpoint = 'https://api-ssl.bitly.com/v3/link/clicks'
+response = requests.get(endpoint, params=query_params, verify=False)
+
+data = json.loads(response.content)
+print (data)
+-------------------
+
+import requests
+import json
+
+query_params = {'access_token': myapi_token,
+                'link': 'http://bit.ly/byTYvf',
+                'unit': 'day',
+                "domain": "twitter.com"}
+
+endpoint = 'https://api-ssl.bitly.com/v3/link/referrers'
+response = requests.get(endpoint, params=query_params, verify=False)
+
+data = json.loads(response.content)
+print (data)
